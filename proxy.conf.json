@@ -1,0 +1,6 @@
+{
+    "/api": {
+        "target": "dashboard.pclub.in",
+        "secure": false
+   }
+}

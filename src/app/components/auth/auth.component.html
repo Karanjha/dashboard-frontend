@@ -1,0 +1,5 @@
+<h1>LOGIN COMPONENT</h1>
+<input type="text" [(ngModel)]="username">
+<input type="password" [(ngModel)]="password">
+<button (click)="login()">LOGIN</button>
+<h1 *ngIf="message">{{message}}</h1>
