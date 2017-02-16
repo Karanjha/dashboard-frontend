@@ -1,0 +1,13 @@
+{
+    "manifest_version": 2,
+
+    "name": "IITK-Dashboard",
+    "short_name": "Dashboard",
+    "description": "A Web Extension for the Inter IIT Tech Meet 2017 Problem Statement",
+    "version": "1.0",
+
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
