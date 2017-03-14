@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './components/auth/auth.component';
 
-import { AuthService } from 'services/auth.service';
+import { AuthService } from './services/auth.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -19,7 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     HttpModule
   ],
   providers: [
