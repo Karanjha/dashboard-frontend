@@ -4,8 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { AuthComponent } from './components/auth/auth.component';
+import { AuthComponent } from './components/auth';
+import { MainComponent } from './components/main';
 
+import { LoggedInGuard, LoggedOutGuard } from './services/auth.guard';
 import { AuthService } from './services/auth.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent
+    AuthComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -23,8 +26,10 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    LoggedInGuard,
+    LoggedOutGuard
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
