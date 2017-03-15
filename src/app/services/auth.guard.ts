@@ -13,12 +13,14 @@ export class LoggedInGuard implements CanActivate {
               private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (this.authService.isLoggedIn()) {
-      return true;
-    }
-    this.redirectUrlSubject.next(state.url);
-    this.router.navigate(['login']);
-    return false;
+    return this.authService.isLoggedIn()
+      .then((loggedIn) => {
+        if (!loggedIn) {
+          this.redirectUrlSubject.next(state.url);
+          this.router.navigate(['login']);
+        }
+        return loggedIn;
+      });
   }
 
 }
@@ -30,11 +32,12 @@ export class LoggedOutGuard implements CanActivate {
               private router: Router) {}
 
   canActivate() {
-    if (!this.authService.isLoggedIn()) {
-      return true;
-    }
-    this.router.navigate(['main']);
-    return false;
+    return this.authService.isLoggedIn().then((loggedIn) => {
+      if (loggedIn) {
+        this.router.navigate(['main']);
+      }
+      return !loggedIn;
+    });
   }
 
 }

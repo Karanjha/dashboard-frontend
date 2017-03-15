@@ -6,14 +6,13 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class AuthService {
 
-  private loggedIn = false;
+  private loggedIn: Promise<boolean>;
 
   constructor(private http: Http) {
-    this.http.get('https://dashboard.pclub.in/api/user/me').toPromise()
-      .then((res) => {
-        this.loggedIn = true;
-      })
-      .catch((err) => this.loggedIn = false);
+    this.loggedIn = this.http.get('https://dashboard.pclub.in/api/user/me')
+      .toPromise()
+      .then((res) => true)
+      .catch((err) => false);
   }
 
   login(username: string, password: string): Promise<any> {
@@ -22,13 +21,13 @@ export class AuthService {
                           {'username': username, 'password': password})
       .toPromise()
       .then((res) => {
-        this.loggedIn = true;
+        this.loggedIn = Promise.resolve(true);
         return res.status;
       });
 
   }
 
-  isLoggedIn(): boolean {
+  isLoggedIn(): Promise<boolean> {
     return this.loggedIn;
   }
 
