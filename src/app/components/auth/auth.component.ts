@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MdSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
@@ -13,27 +14,30 @@ export class AuthComponent implements OnInit {
 
   username: string;
   password: string;
-  message: string;
 
   redirectUrl = [];
 
   constructor(private authService: AuthService,
               private loggedInGuard: LoggedInGuard,
-              private router: Router) {}
+              private router: Router,
+              public snackBar: MdSnackBar) {}
 
   login() {
     this.authService.login(this.username, this.password)
       .then(res => {
-        this.message = 'Login Successful';
+        this.snackBar.open('Login Successful', 'Dismiss', {
+          duration: 3000
+        });
         if (this.redirectUrl.length !== 0) {
-          console.log(this.redirectUrl);
           this.router.navigate(this.redirectUrl);
         } else {
           this.router.navigate(['main']);
         }
       })
       .catch(res => {
-        this.message = 'Login Failure';
+        this.snackBar.open('Login Unsuccessful', 'Dismiss', {
+          extraClasses: [ 'error' ]
+        });
       });
   }
 
