@@ -14,6 +14,7 @@ export class AuthComponent implements OnInit {
 
   username: string;
   password: string;
+  loading = false;
 
   redirectUrl = [];
 
@@ -23,6 +24,7 @@ export class AuthComponent implements OnInit {
               public snackBar: MdSnackBar) {}
 
   login() {
+    this.loading = true;
     this.authService.login(this.username, this.password)
       .then(res => {
         this.snackBar.open('Login Successful', 'Dismiss', {
@@ -35,8 +37,9 @@ export class AuthComponent implements OnInit {
         }
       })
       .catch(res => {
+        this.loading = false;
         this.snackBar.open('Login Unsuccessful', 'Dismiss', {
-          extraClasses: [ 'error' ]
+          extraClasses: ['error']
         });
       });
   }

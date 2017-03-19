@@ -3,12 +3,24 @@
   <md-card-content>
     <form>
       <md-input-container>
-        <input mdInput placeholder="CC UserId" [(ngModel)]="username" name="CC UserId">
+        <input
+          mdInput
+          placeholder="CC UserId"
+          [(ngModel)]="username"
+          name="CC UserId">
       </md-input-container>
       <md-input-container>
-        <input mdInput placeholder="CC Password" [(ngModel)]="password" name="CC Password" type="password">
+        <input
+          mdInput
+          placeholder="CC Password"
+          [(ngModel)]="password"
+          name="CC Password"
+          type="password">
       </md-input-container>
-      <button md-raised-button (click)="login()">Login</button>
+      <button md-raised-button (click)="login()" *ngIf="!loading">
+        Login
+      </button>
+      <md-progress-bar *ngIf="loading" mode="indeterminate"></md-progress-bar>
     </form>
   </md-card-content>
 </md-card>
