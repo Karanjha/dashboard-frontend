@@ -1,0 +1,23 @@
+<md-card>
+  <md-card-title>
+    {{ post.frm }} to {{ post.to }}
+  </md-card-title>
+  <md-card-subtitle>
+    {{ post.date | date }}
+    {{ post.time }}
+  </md-card-subtitle>
+  <md-card-content>
+    <p>
+      {{ post.content }}
+    </p>
+    <p class="author">
+      {{ post.author }}
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <a [href]="'https://www.facebook.com/groups/433290100027449/permalink/' + post.postId"
+       md-button>
+      VIEW ON FACEBOOK
+    </a>
+  </md-card-actions>
+</md-card>

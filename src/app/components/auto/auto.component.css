@@ -1,0 +1,26 @@
+#topcontainer {
+  width: 80%;
+  margin: 0 auto;
+  min-width: 400px;
+}
+
+app-post {
+  margin: 0.2em;
+}
+#post-container {
+  width: 100%;
+  min-width: 200px;
+  margin: 0 auto;
+}
+md-progress-circle {
+  margin: 40vh auto;
+}
+form {
+  margin: 0.5em auto;
+}
+button#addpost {
+  padding: 0.4vmin;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

@@ -1,0 +1,61 @@
+<button md-fab
+        id="addpost"
+        (click)="openPostDialog()"
+        color="primary">
+  <md-icon>
+    add
+  </md-icon>
+</button>
+
+<div id="topcontainer">
+  <md-progress-circle
+    class="example-margin"
+    mode="indeterminate"
+    *ngIf="!loaded">
+  </md-progress-circle>
+
+  <form *ngIf="loaded">
+    <md-select placeholder="To"
+               [(ngModel)]="locationTo"
+               name="locationTo"
+               (change)="filterPosts()">
+      <md-option *ngFor="let location of locations"
+                 [value]="location">
+        {{location}}
+      </md-option>
+    </md-select>
+
+    <md-select placeholder="From"
+               [(ngModel)]="locationFrom"
+               name="locationFrom"
+               (change)="filterPosts()">
+      <md-option *ngFor="let location of locations"
+                 [value]="location">
+        {{location}}
+      </md-option>
+    </md-select>
+
+    <md-input-container>
+      <input mdInput placeholder="DD/MM/YYYY"
+             [(ngModel)]="onDate"
+             name="onDate"
+             (change)="filterPosts()"
+             type = "date">
+    </md-input-container>
+
+    <md-input-container>
+      <input mdInput placeholder="Post Content"
+             [(ngModel)]="content"
+             name="content"
+             (keyup)="filterPosts()">
+    </md-input-container>
+
+  </form>
+
+  <div id="post-container"
+       *ngIf="loaded">
+    <app-post *ngFor = "let post of posts"
+              [post] = "post">
+    </app-post>
+  </div>
+</div>
