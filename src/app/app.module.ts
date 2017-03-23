@@ -7,6 +7,8 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './components/auth';
 import { MainComponent } from './components/main';
+import { CalendarComponent } from 'angular2-fullcalendar/src/calendar/calendar';
+import { EventComponent } from './components/event/event.component';
 
 import { LoggedInGuard, LoggedOutGuard } from './services/auth.guard';
 import { AuthService } from './services/auth.service';
@@ -18,7 +20,9 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     AuthComponent,
-    MainComponent
+    MainComponent,
+    CalendarComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,
