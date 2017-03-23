@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MdDialog } from '@angular/material';
 
-import { AutoPostComponent } from '../../components/auto-post';
 import { AutoService } from '../../services/auto.service';
 import { Post } from '../../models/post.model';
 
@@ -21,8 +19,7 @@ export class AutoComponent implements OnInit {
   locationFrom = 'Anywhere';
   content = '';
   onDate = '';
-  constructor(private autoService: AutoService,
-              public dialog: MdDialog) { }
+  constructor(private autoService: AutoService) { }
 
   ngOnInit() {
     this.posts = [];
@@ -31,10 +28,6 @@ export class AutoComponent implements OnInit {
       this.originalPosts = p;
       this.posts = p;
     });
-  }
-
-  openPostDialog() {
-    this.dialog.open(AutoPostComponent);
   }
 
   filterPosts() {

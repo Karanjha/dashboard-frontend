@@ -1,7 +1,7 @@
 #topcontainer {
   width: 80%;
-  margin: 0 auto;
-  min-width: 400px;
+  margin: 5vmin auto;
+  min-width: 200px;
 }
 
 app-post {
@@ -18,9 +18,9 @@ md-progress-circle {
 form {
   margin: 0.5em auto;
 }
-button#addpost {
-  padding: 0.4vmin;
+a#addpost {
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 1vmin;
+  right: 1vmin;
+  z-index: 1000;
 }

@@ -23,11 +23,11 @@ import { HttpWrapperService } from './services/http-wrapper.service';
   declarations: [
     AppComponent,
     AuthComponent,
+    AutoComponent,
     MainComponent,
     CalendarComponent,
     EventComponent,
     EventDialogComponent,
-    AutoComponent,
     PostComponent,
   ],
   imports: [
