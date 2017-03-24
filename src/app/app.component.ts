@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   currTab: string = 'Introduction';
 
   tabs: {} = {
-    'Introduction' : {'state': true},
+    'Introduction' : {'state': false},
     'Event': {'state': false},
     'Share': {'state': false},
     'Student Search': {'state': false}
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
 
   check(state) {
     this.loggedIn = state;
-    this.tabs[this.currTab].state = true;
+    this.tabs[this.currTab].state = state;
   }
 
   switchTab(tab: string) {

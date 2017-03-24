@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { HttpWrapperService } from './http-wrapper.service';
 
@@ -10,17 +10,15 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class AuthService {
 
-  public loggedIn: Subject<boolean> = new Subject<boolean>();
+  public loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpWrapperService) {
     if (localStorage.getItem('auth')) {
-        console.log(`Logged In in via local token temporarily ${true}`);
       this.loggedIn.next(true);
     }
     this.http.get('https://dashboard.pclub.in/api/user/me')
       .toPromise()
       .then((res) => {
-        console.log(`Logged In in AuthService ${true}`);
         this.loggedIn.next(true);
       })
       .catch((err) => {
