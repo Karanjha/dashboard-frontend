@@ -1,15 +1,15 @@
 <h1 md-dialog-title>Event</h1>
 <md-dialog-content>
   <md-input-container>
-    <textarea mdInput placeholder="Event Description"></textarea>
+    <textarea mdInput placeholder="Event Description" #description></textarea>
   </md-input-container>
   <md-input-container>
-    <input mdInput type="datetime-local" [value]="date.format('YYYY-MM-DD') + 'T' + date.format('HH:mm')" placeholder="Start Time" />
+    <input mdInput type="datetime-local" [value]="date.format('YYYY-MM-DD') + 'T' + date.format('HH:mm')" placeholder="Start Time" #start/>
   </md-input-container>
   <md-input-container>
-    <input mdInput type="datetime-local" [value]="date.clone().add(1, 'h').format('YYYY-MM-DD') + 'T' + date.clone().add(1,'h').format('HH:mm')" placeholder="End Time" />
+    <input mdInput type="datetime-local" [value]="date.clone().add(1, 'h').format('YYYY-MM-DD') + 'T' + date.clone().add(1,'h').format('HH:mm')" placeholder="End Time" #end/>
   </md-input-container>
 </md-dialog-content>
 <md-dialog-actions>
-  <button md-raised-button>Add</button>
+  <button md-raised-button [disabled]="loading" (click)="post(description.value, start.value, end.value)">Add</button>
 </md-dialog-actions>

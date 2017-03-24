@@ -25,6 +25,7 @@ import { StudentComponent } from './components/student';
 
 import { AuthService } from './services/auth.service';
 import { AutoService } from './services/auto.service';
+import { EventService } from './services/event.service';
 import { HttpWrapperService } from './services/http-wrapper.service';
 
 
@@ -55,8 +56,9 @@ import { HttpWrapperService } from './services/http-wrapper.service';
   ],
   providers: [
     AuthService,
-    HttpWrapperService,
     AutoService,
+    EventService,
+    HttpWrapperService,
     SearchService
   ],
   bootstrap: [ AppComponent ],
