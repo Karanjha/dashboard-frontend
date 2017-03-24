@@ -138,6 +138,10 @@
     magic-string "^0.19.0"
     source-map "^0.5.6"
 
+"@types/clipboard@1.5.31":
+  version "1.5.31"
+  resolved "https://registry.yarnpkg.com/@types/clipboard/-/clipboard-1.5.31.tgz#e7b549a5d4ee689b3766dc6a631ca1cf2f4a624a"
+
 "@types/fullcalendar@^2.7.35":
   version "2.7.38"
   resolved "https://registry.yarnpkg.com/@types/fullcalendar/-/fullcalendar-2.7.38.tgz#dd08c35b090cf787214658bd2a453ac9c191d896"
@@ -251,6 +255,16 @@ angular2-fullcalendar@^1.1.1:
     "@types/node" "^6.0.42"
     fullcalendar "^3.0.1"
     rxjs "^5.0.0-beta.12"
+
+angular2-infinite-scroll@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/angular2-infinite-scroll/-/angular2-infinite-scroll-0.3.4.tgz#d011ab7dc7a85a2ca908540166b679a68d396f53"
+
+angular2-masonry@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/angular2-masonry/-/angular2-masonry-0.4.0.tgz#5be7c87bdabc50ed384f01c585f50f5170cdff10"
+  dependencies:
+    masonry-layout "^4.1.1"
 
 ansi-align@^1.1.0:
   version "1.1.0"
@@ -843,6 +857,22 @@ cli-width@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.1.0.tgz#b234ca209b29ef66fc518d9b98d5847b00edf00a"
 
+clipboard@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-1.6.1.tgz#65c5b654812466b0faab82dc6ba0f1d2f8e4be53"
+  dependencies:
+    good-listener "^1.2.0"
+    select "^1.1.2"
+    tiny-emitter "^1.0.0"
+
+clipboard@~1.5.16:
+  version "1.5.16"
+  resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-1.5.16.tgz#916d5e739b0064be61b0b48a535731ecaef3d367"
+  dependencies:
+    good-listener "^1.2.0"
+    select "^1.0.6"
+    tiny-emitter "^1.0.0"
+
 cliui@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-2.1.0.tgz#4b475760ff80264c762c3a1719032e91c7fea0d1"
@@ -1297,6 +1327,10 @@ delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
 
+delegate@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.1.2.tgz#1e1bc6f5cadda6cb6cbf7e6d05d0bcdd5712aebe"
+
 delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
@@ -1315,6 +1349,10 @@ des.js@^1.0.0:
   dependencies:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
+
+desandro-matches-selector@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/desandro-matches-selector/-/desandro-matches-selector-2.0.2.tgz#717beed4dc13e7d8f3762f707a6d58a6774218e1"
 
 destroy@~1.0.4:
   version "1.0.4"
@@ -1555,6 +1593,10 @@ etag@~1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.0.tgz#6f631aef336d6c46362b51764044ce216be3c051"
 
+ev-emitter@^1.0.0:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/ev-emitter/-/ev-emitter-1.0.3.tgz#ee5ef74b6ed28d911b32ddcbfc97867f580937bc"
+
 eventemitter3@1.x.x:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
@@ -1753,6 +1795,12 @@ findup-sync@~0.3.0:
   dependencies:
     glob "~5.0.0"
 
+fizzy-ui-utils@^2.0.0:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/fizzy-ui-utils/-/fizzy-ui-utils-2.0.4.tgz#35dab07177ce530b5380c8ce05f7c1e361daedd5"
+  dependencies:
+    desandro-matches-selector "^2.0.0"
+
 flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
@@ -1871,6 +1919,10 @@ get-caller-file@^1.0.0, get-caller-file@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
 
+get-size@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/get-size/-/get-size-2.0.2.tgz#555ea98ab8732e0c021e9e23e2219adcbe398e98"
+
 get-stdin@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-4.0.1.tgz#b968c6b0a04384324902e8bf1a5df32579a450fe"
@@ -1949,6 +2001,12 @@ globule@^1.0.0:
     lodash "~4.16.4"
     minimatch "~3.0.2"
 
+good-listener@^1.2.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/good-listener/-/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
+  dependencies:
+    delegate "^3.1.2"
+
 got@^5.0.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/got/-/got-5.7.1.tgz#5f81635a61e4a6589f180569ea4e381680a51f35"
@@ -1976,6 +2034,10 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
 "graceful-readlink@>= 1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
+
+hammerjs@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
 
 handle-thing@^1.2.4:
   version "1.2.5"
@@ -2895,6 +2957,13 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
+masonry-layout@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/masonry-layout/-/masonry-layout-4.1.1.tgz#e8c8c6f5a9e621a75203ac4b7000855a36f6753e"
+  dependencies:
+    get-size "^2.0.2"
+    outlayer "^2.1.0"
+
 matcher-collection@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/matcher-collection/-/matcher-collection-1.0.4.tgz#2f66ae0869996f29e43d0b62c83dd1d43e581755"
@@ -3043,6 +3112,13 @@ ncname@1.0.x:
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
+
+ngx-clipboard@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-3.0.7.tgz#7ca42262ad3099cebdf9848c5429bd44685d6b77"
+  dependencies:
+    "@types/clipboard" "1.5.31"
+    clipboard "~1.5.16"
 
 no-case@^2.2.0:
   version "2.3.1"
@@ -3312,6 +3388,14 @@ osenv@0, osenv@^0.1.0, osenv@^0.1.4:
   dependencies:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
+
+outlayer@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/outlayer/-/outlayer-2.1.0.tgz#83b7beefc19becd3278c8ade988d268788d6f93d"
+  dependencies:
+    ev-emitter "^1.0.0"
+    fizzy-ui-utils "^2.0.0"
+    get-size "^2.0.2"
 
 package-json@^2.0.0:
   version "2.4.0"
@@ -4163,6 +4247,10 @@ select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
 
+select@^1.0.6, select@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
+
 selenium-webdriver@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/selenium-webdriver/-/selenium-webdriver-3.0.1.tgz#a2dea5da4a97f6672e89e7ca7276cefa365147a7"
@@ -4618,6 +4706,10 @@ timers-browserify@^2.0.2:
   resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.2.tgz#ab4883cf597dcd50af211349a00fbca56ac86b86"
   dependencies:
     setimmediate "^1.0.4"
+
+tiny-emitter@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-1.1.0.tgz#ab405a21ffed814a76c19739648093d70654fecb"
 
 tmp@0.0.24:
   version "0.0.24"
