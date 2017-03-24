@@ -22,11 +22,22 @@ export class AutoComponent implements OnInit {
   constructor(private autoService: AutoService) { }
 
   ngOnInit() {
-    this.posts = [];
+    // Try to read localStorage
+    let localStorageData = localStorage.getItem('sharecache');
+    if (localStorageData && JSON.parse(localStorageData))
+      this.posts = JSON.parse(localStorageData);
+    else
+      this.posts = [];
+    this.loadPostsFromServer();
+    setInterval(this.loadPostsFromServer, 10000);
+  }
+
+  private loadPostsFromServer() {
     this.autoService.getPosts().then(p => {
       this.loaded = true;
       this.originalPosts = p;
       this.posts = p;
+      localStorage.setItem('sharecache', JSON.stringify(this.posts));
     });
   }
 
