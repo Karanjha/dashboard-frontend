@@ -11,13 +11,14 @@ export class AppComponent implements OnInit {
 
   loggedIn: boolean = false;
 
-  tabLabels: string[] = ['Main', 'Event'];
+  tabLabels: string[] = ['Main', 'Event', 'Share'];
 
   currTab: string = 'Main';
 
   tabs: {} = {
     'Main' : {'state': false},
-    'Event': {'state': false}
+    'Event': {'state': false},
+    'Share': {'state': false}
   };
 
   constructor(private authService: AuthService) {}

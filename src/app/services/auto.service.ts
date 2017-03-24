@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Response } from '@angular/http';
+
+import { HttpWrapperService } from './http-wrapper.service';
 
 import { Post } from '../models/post.model';
 
 import { Observable } from 'rxjs/Observable';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
@@ -12,7 +15,7 @@ const apiUrl = 'https://dashboard.pclub.in/api/share/get';
 @Injectable()
 export class AutoService {
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpWrapperService) { }
 
   getPosts(): Promise<Post[]> {
     return this.http.get(apiUrl)

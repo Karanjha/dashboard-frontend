@@ -29,7 +29,6 @@ export class AutoComponent implements OnInit {
     else
       this.posts = [];
     this.loadPostsFromServer();
-    setInterval(this.loadPostsFromServer, 10000);
   }
 
   private loadPostsFromServer() {
