@@ -24,10 +24,12 @@ export class AutoComponent implements OnInit {
   ngOnInit() {
     // Try to read localStorage
     let localStorageData = localStorage.getItem('sharecache');
-    if (localStorageData && JSON.parse(localStorageData))
+    if (localStorageData && JSON.parse(localStorageData)) {
+      this.loaded = true;
       this.posts = JSON.parse(localStorageData);
-    else
+    } else {
       this.posts = [];
+    }
     this.loadPostsFromServer();
   }
 
