@@ -25,15 +25,9 @@ export class AppComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-     this.authService.isLoggedIn()
-      .then((loggedIn) => {
-        console.log(`Logged In in AppComponent ${loggedIn}`);
-        if (loggedIn) {
-          this.loggedIn = true;
-        } else {
-          this.loggedIn = false;
-        }
-      });
+    this.authService.loggedIn.subscribe((val) => {
+      this.loggedIn = val;
+    });
   }
 
   check(state) {
@@ -42,13 +36,10 @@ export class AppComponent implements OnInit {
   }
 
   switchTab(tab: string) {
-    if (this.currTab === tab) {
-      console.log('Try out something different');
-    } else {
+    if (this.currTab !== tab) {
       this.tabs[this.currTab].state = false;
       this.tabs[tab].state = true;
       this.currTab = tab;
-      console.log(tab);
     }
   }
 

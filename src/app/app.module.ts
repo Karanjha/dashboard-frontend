@@ -23,7 +23,6 @@ import { SearchComponent } from './components/search';
 import { SearchService } from './services/search.service';
 import { StudentComponent } from './components/student';
 
-import { LoggedInGuard, LoggedOutGuard } from './services/auth.guard';
 import { AuthService } from './services/auth.service';
 import { AutoService } from './services/auto.service';
 import { HttpWrapperService } from './services/http-wrapper.service';
@@ -58,8 +57,6 @@ import { HttpWrapperService } from './services/http-wrapper.service';
     AuthService,
     HttpWrapperService,
     AutoService,
-    LoggedInGuard,
-    LoggedOutGuard,
     SearchService
   ],
   bootstrap: [ AppComponent ],

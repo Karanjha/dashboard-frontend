@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
+
 @Injectable()
 export class HttpWrapperService {
 
@@ -21,6 +22,7 @@ export class HttpWrapperService {
 
     return this.http.get(url, {headers: header});
   }
+
   post(url: string, data: any): Observable<Response> {
     const header = new Headers();
     if (localStorage.getItem('username')) {
