@@ -12,8 +12,9 @@ import { EventComponent } from './components/event/event.component';
 
 import { LoggedInGuard, LoggedOutGuard } from './services/auth.guard';
 import { AuthService } from './services/auth.service';
+import { HttpWrapperService } from './services/http-wrapper.service';
 
-import { AppRoutingModule } from './app-routing.module';
+import { EventDialogComponent } from './components/event/event-dialog/event-dialog.component';
 
 
 @NgModule({
@@ -22,20 +23,22 @@ import { AppRoutingModule } from './app-routing.module';
     AuthComponent,
     MainComponent,
     CalendarComponent,
-    EventComponent
+    EventComponent,
+    EventDialogComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
     HttpModule,
     MaterialModule
   ],
   providers: [
     AuthService,
+    HttpWrapperService,
     LoggedInGuard,
     LoggedOutGuard
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  entryComponents: [ EventDialogComponent ]
 })
 export class AppModule { }

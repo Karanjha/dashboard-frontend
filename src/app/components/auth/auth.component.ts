@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MdSnackBar } from '@angular/material';
-import { Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
-import { LoggedInGuard } from '../../services/auth.guard';
 
 @Component({
   selector: 'app-auth',
@@ -15,12 +13,12 @@ export class AuthComponent implements OnInit {
   username: string;
   password: string;
   loading = false;
+  @Output() loggedIn: EventEmitter<boolean> = new EventEmitter<boolean>();
+
 
   redirectUrl = [];
 
   constructor(private authService: AuthService,
-              private loggedInGuard: LoggedInGuard,
-              private router: Router,
               public snackBar: MdSnackBar) {}
 
   login() {
@@ -30,24 +28,17 @@ export class AuthComponent implements OnInit {
         this.snackBar.open('Login Successful', 'Dismiss', {
           duration: 3000
         });
-        if (this.redirectUrl.length !== 0) {
-          this.router.navigate(this.redirectUrl);
-        } else {
-          this.router.navigate(['main']);
-        }
+        this.loggedIn.emit(true);
       })
       .catch(res => {
         this.loading = false;
         this.snackBar.open('Login Unsuccessful', 'Dismiss', {
           extraClasses: ['error']
         });
+        this.loggedIn.emit(false);
       });
   }
 
-  ngOnInit() {
-    this.loggedInGuard.redirectUrlSubject
-      .subscribe((url) =>
-                 this.redirectUrl = [url]);
-  }
+  ngOnInit() {}
 
 }

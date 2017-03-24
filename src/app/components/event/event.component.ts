@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-// import { CalendarComponent } from 'angular2-fullcalendar/src/calendar/calendar';
+import { MdDialog } from '@angular/material';
+import { EventDialogComponent } from './event-dialog/event-dialog.component';
 
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.css']
 })
+
 export class EventComponent implements OnInit {
 
   openDialog(date?: moment.Moment) {
-    if (date) {
-      prompt('New Event on: ' + date.format());
-    } else {
-      prompt('Enter new Event');
-    }
+    this.dialog.open(EventDialogComponent, {
+      data: {
+        date: date
+      }
+    });
   }
 
   calendarOptions: Object = {
@@ -24,6 +26,12 @@ export class EventComponent implements OnInit {
     eventLimit: true, // allow "more" link when too many events
     dayClick: (date, jsEvent, view) => {
       this.openDialog(date);
+    },
+    eventClick: function(calEvent, jsEvent, view) {
+
+        alert('Event: ' + calEvent.title);
+        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+        alert('View: ' + view.name);
     },
     events: [
       {
@@ -38,6 +46,10 @@ export class EventComponent implements OnInit {
       {
         id: 999,
         title: 'Repeating Event',
+        start: '2016-09-09T16:00:00'
+      },
+      {
+        title: 'Reasdasdpeating Event',
         start: '2016-09-09T16:00:00'
       },
       {
@@ -73,7 +85,7 @@ export class EventComponent implements OnInit {
       }
     ]
   };
-  constructor() { }
+  constructor(private dialog: MdDialog) { }
   ngOnInit() {}
 
 }

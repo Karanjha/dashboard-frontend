@@ -1,1 +1,10 @@
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+<app-auth *ngIf="!loggedIn" (loggedIn)="check($event)"></app-auth>
+<nav md-tab-nav-bar *ngIf="loggedIn">
+  <a md-tab-link *ngFor="let tab of tabLabels" (click)="switchTab(tab)" [active]="currTab == tab">{{tab}}</a>
+</nav>
+<app-main *ngIf="tabs['Main'].state"></app-main>
+<app-event *ngIf="tabs['Event'].state"></app-event>
+
+
+
