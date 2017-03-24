@@ -11,12 +11,12 @@ export class AppComponent implements OnInit {
 
   loggedIn: boolean = false;
 
-  tabLabels: string[] = ['Main', 'Event', 'Share', 'Student Search'];
+  tabLabels: string[] = ['Introduction', 'Event', 'Share', 'Student Search'];
 
-  currTab: string = 'Main';
+  currTab: string = 'Introduction';
 
   tabs: {} = {
-    'Main' : {'state': false},
+    'Introduction' : {'state': true},
     'Event': {'state': false},
     'Share': {'state': false},
     'Student Search': {'state': false}
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.authService.loggedIn.subscribe((val) => {
-      this.loggedIn = val;
+      this.check(val);
     });
   }
 
