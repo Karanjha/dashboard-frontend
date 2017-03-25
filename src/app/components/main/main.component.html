@@ -1,32 +1,39 @@
-<div [ngGrid]="globalConfig">
-  <div [(ngGridItem)]="configurations.twitter.config"
-       *ngIf="configurations.twitter.display">
-    <md-card>
+<div class="container">
+  <div class="twittercontainer fl">
+    <md-card *ngIf="configurations.twitter.display">
       <md-card-content class="twitter">
-        <app-feed></app-feed>
+        <div class="twitterinner">
+          <app-feed></app-feed>
+        </div>
       </md-card-content>
     </md-card>
   </div>
 
-  <div [(ngGridItem)]="configurations.selfData.config"
-       *ngIf="configurations.selfData.display"
-       (onChange)="updateItem($event)">
-    <md-card>
-      <md-card-content>
+  <div class="selfcontainer fl">
+    <md-card *ngIf="configurations.selfData.display">
+      <md-card-content class="self">
         <search-detail
-            [alternate]="authService.user">
+          [alternate]="authService.user">
         </search-detail>
       </md-card-content>
     </md-card>
   </div>
 
-  <div [(ngGridItem)]="configurations.calenData.config"
-       *ngIf="configurations.calenData.display"
-       (onChange)="updateItem($event)">
-      <md-card>
-        <md-card-content>
-          <app-event [view]="'basicDay'"></app-event>
-        </md-card-content>
-      </md-card>
+  <div class="calendarcontainer fl">
+    <md-card *ngIf="configurations.calenData.display">
+      <md-card-content class="calendar">
+        <app-event [view]="'basicDay'"></app-event>
+      </md-card-content>
+    </md-card>
   </div>
+
+  <div class="weathercontainer fl">
+    <md-card *ngIf="configurations.weather.display">
+      <md-card-content class="weather">
+        <app-weather></app-weather>
+      </md-card-content>
+    </md-card>
+  </div>
+
+
 </div>

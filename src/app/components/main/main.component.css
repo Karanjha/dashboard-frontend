@@ -1,4 +1,26 @@
-.twitter {
-  max-height: 80vh;
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+}
+
+.fl {
+  width: 45vw;
+  margin: 20px;
+}
+
+.selfcontainer {
+  min-width: 500px;
+}
+.twitterinner {
+  height: 46.5vh;
   overflow: auto;
+}
+
+
+.weather {
+  text-align: center;
 }

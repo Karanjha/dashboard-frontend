@@ -12,12 +12,12 @@ export class AppComponent implements OnInit {
   loggedIn: boolean = false;
   settings: boolean;
 
-  tabLabels: string[] = ['Introduction', 'Event', 'Share', 'Student Search'];
+  tabLabels: string[] = ['Dashboard', 'Event', 'Share', 'Student Search'];
 
-  currTab: string = 'Introduction';
+  currTab: string = 'Dashboard';
 
   tabs: {} = {
-    'Introduction' : {'state': true},
+    'Dashboard' : {'state': true},
     'Event': {'state': false},
     'Share': {'state': false},
     'Student Search': {'state': false}

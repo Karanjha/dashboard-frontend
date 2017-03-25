@@ -7,7 +7,6 @@ import { MaterialModule } from '@angular/material';
 import { ClipboardModule } from 'ngx-clipboard';
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import { MasonryModule } from 'angular2-masonry';
-import { NgGridModule } from 'angular2-grid';
 
 import { AppComponent } from './app.component';
 import { AuthComponent } from './components/auth';
@@ -61,8 +60,7 @@ import { WeatherService } from './services/weather.service';
     HttpModule,
     InfiniteScrollModule,
     MasonryModule,
-    MaterialModule,
-    NgGridModule
+    MaterialModule
   ],
   providers: [
     AuthService,

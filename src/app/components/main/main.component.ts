@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {NgGrid, NgGridItem, NgGridConfig, NgGridItemConfig, NgGridItemEvent} from 'angular2-grid';
 
 import { AuthService } from '../../services/auth.service';
 
@@ -16,48 +15,26 @@ export class MainComponent implements OnInit {
     'margins': [5, 5],
     'fix_to_grid': true
   }
-  private defaults = {
-    'twitter': {
-      sizex: 2,
-      sizey: 2,
-      col: 1,
-      row: 1,
-      payload: 'twitter'
-    },
-    'selfData': {
-      row: 2,
-      sizex: 2,
-      sizey: 2,
-      col: 3,
-      payload: 'selfData'
-    },
-    'calenData': {
-      row: 3,
-      sizex: 3,
-      sizey: 3,
-      col: 3,
-      payload: 'calenData'
-    }
-
-  };
 
   private localStoreToWidgetName = {
     'Twitter-Feed': 'twitter',
     'Student-Details': 'selfData',
-    'Calendar' : 'calenData'
+    'Calendar' : 'calenData',
+    'Weather': 'weather'
   };
 
   configurations: any = {
     'twitter': {
-      display: false,
-      config: this.defaults['twitter']
+      display: false
     },
     'selfData': {
-      display: false,
-      config: this.defaults['selfData']
+      display: false
     },
     'calenData': {
-      display: true,
+      display: false
+    },
+    'weather': {
+      display: false
     }
   };
 
@@ -71,15 +48,6 @@ export class MainComponent implements OnInit {
     }
   }
 
-/*
- updateItem(evt: NgGridItemEvent): void {
-  localStorage.setItem(`${evt.payload}.config`,
-    JSON.stringify(this.configurations[evt.payload].config));
-    console.log(evt);
-    }
-*/
-  constructor(public authService: AuthService) {
-
-  }
+  constructor(public authService: AuthService) { }
 
 }
