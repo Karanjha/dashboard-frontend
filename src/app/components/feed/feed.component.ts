@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, OnInit, ElementRef } from '@angular/core';
 
-const url = '//platform.twitter.com/widgets.js'
+const url = '/assets/widgets.js'
 
 @Component({
   selector: 'app-feed',
