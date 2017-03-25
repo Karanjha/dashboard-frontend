@@ -1,9 +1,13 @@
 <!-- <router-outlet></router-outlet> -->
 <app-auth *ngIf="!loggedIn" (loggedIn)="check($event)"></app-auth>
-<nav md-tab-nav-bar *ngIf="loggedIn">
-  <a md-tab-link *ngFor="let tab of tabLabels" (click)="switchTab(tab)" [active]="currTab == tab">{{tab}}</a>
-</nav>
-<app-main *ngIf="tabs['Introduction'].state"></app-main>
-<app-event *ngIf="tabs['Event'].state"></app-event>
-<app-auto *ngIf="tabs['Share'].state"></app-auto>
-<search-root *ngIf="tabs['Student Search'].state"></search-root>
+<div *ngIf="loggedIn && !(settings)">
+  <nav md-tab-nav-bar>
+    <a md-tab-link *ngFor="let tab of tabLabels" (click)="switchTab(tab)" [active]="currTab == tab">{{tab}}</a>
+  </nav>
+  <app-main *ngIf="tabs['Introduction'].state"></app-main>
+  <app-event *ngIf="tabs['Event'].state"></app-event>
+  <app-auto *ngIf="tabs['Share'].state"></app-auto>
+  <search-root *ngIf="tabs['Student Search'].state"></search-root>
+</div>
+<app-settings *ngIf="settings"></app-settings>
+<app-settings-button (settings)="showSettings($event)" *ngIf="loggedIn && tabs['Introduction'].state"></app-settings-button>

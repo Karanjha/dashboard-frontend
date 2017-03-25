@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.childcontainer {
+    display: flex;
+    flex-direction: column;
+}
+md-card {
+    margin-left: 15vmin;
+    width: 60vw;
+}
+
+md-sidenav-container {
+    left: 0;
+    width: 25vmin;
+}
+
+md-sidenav {
+    left: 0;
+    width: 25vmin;
+    background: #eee;
+}
+
+.isActive {
+    background-color: white;
+}
+
+md-sidenav button {
+    display: block;
+    font-size: 1rem;
+    text-align: left;
+    width: 25vmin;
+}

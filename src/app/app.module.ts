@@ -23,6 +23,8 @@ import { MainComponent } from './components/main';
 import { PostComponent } from './components/post/post.component';
 import { SearchComponent } from './components/search';
 import { StudentComponent } from './components/student';
+import { SettingsComponent } from './components/settings/settings.component';
+import { SettingsButtonComponent } from './components/settings/settings-button/settings-button.component';
 
 import { AuthService } from './services/auth.service';
 import { AutoService } from './services/auto.service';
@@ -46,7 +48,9 @@ import { SearchService } from './services/search.service';
     EventDialogComponent,
     PostComponent,
     SearchComponent,
-    StudentComponent
+    StudentComponent,
+    SettingsComponent,
+    SettingsButtonComponent
   ],
   imports: [
     BrowserModule,

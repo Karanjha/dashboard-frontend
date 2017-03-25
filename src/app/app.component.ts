@@ -10,6 +10,7 @@ import { AuthService } from './services/auth.service';
 export class AppComponent implements OnInit {
 
   loggedIn: boolean = false;
+  settings: boolean;
 
   tabLabels: string[] = ['Introduction', 'Event', 'Share', 'Student Search'];
 
@@ -41,6 +42,11 @@ export class AppComponent implements OnInit {
       this.tabs[tab].state = true;
       this.currTab = tab;
     }
+  }
+
+  showSettings(state) {
+    this.settings = state;
+    console.log(this.settings);
   }
 
 }

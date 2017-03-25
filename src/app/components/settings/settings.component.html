@@ -1,0 +1,56 @@
+<div class="container">
+  <md-sidenav-container  class="example-container">
+    <md-sidenav #sidenav [opened]="true"
+                [mode]="side"
+                [disableClose]="true"
+                class="example-sidenav">
+      <button md-button *ngFor="let item of itemsLabel" [class.isActive]="currItem === item" (click)="change(item)">{{item}}</button>
+    </md-sidenav>
+  </md-sidenav-container>
+
+  <div class="child-container">
+  <md-card>
+    <md-card-title>Widgets</md-card-title>
+    <md-card-content>
+      <div *ngFor="let item of itemsLabel">
+        <md-checkbox [id]="item" (change)="state($event)">{{item}}</md-checkbox>
+      </div>
+    </md-card-content>
+  </md-card>
+
+  <md-card *ngIf="items['Calendar'].state">
+    <md-card-title>Calendar</md-card-title>
+    <md-card-content>
+      Content Here
+    </md-card-content>
+  </md-card>
+
+  <md-card *ngIf="items['Student-Details'].state">
+    <md-card-title>Student-Details</md-card-title>
+    <md-card-content>
+      Content Here
+    </md-card-content>
+  </md-card>
+
+  <md-card *ngIf="items['Twitter-Feed'].state">
+    <md-card-title>Twitter-Feed</md-card-title>
+    <md-card-content>
+      Content Here
+    </md-card-content>
+  </md-card>
+
+  <md-card *ngIf="items['Weather'].state">
+    <md-card-title>Weather</md-card-title>
+    <md-card-content>
+      Content Here
+    </md-card-content>
+  </md-card>
+  
+  <md-card *ngIf="items['Todo'].state">
+    <md-card-title>Todo</md-card-title>
+    <md-card-content>
+      Content Here
+    </md-card-content>
+  </md-card>
+  </div>
+</div>
