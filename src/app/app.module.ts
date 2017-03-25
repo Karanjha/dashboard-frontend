@@ -7,6 +7,7 @@ import { MaterialModule } from '@angular/material';
 import { ClipboardModule } from 'ngx-clipboard';
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import { MasonryModule } from 'angular2-masonry';
+import { NgGridModule } from 'angular2-grid';
 
 import { AppComponent } from './app.component';
 import { AuthComponent } from './components/auth';
@@ -15,18 +16,19 @@ import { CalendarComponent } from 'angular2-fullcalendar/src/calendar/calendar';
 import { DetailComponent } from './components/detail';
 import { EventComponent } from './components/event/event.component';
 import { EventDialogComponent } from './components/event/event-dialog/event-dialog.component';
+import { FeedComponent } from './components/feed/feed.component';
 import { HelpDialogComponent } from './components/help-dialog';
 import { MailDialogComponent } from './components/mail-dialog';
 import { MainComponent } from './components/main';
 import { PostComponent } from './components/post/post.component';
 import { SearchComponent } from './components/search';
-import { SearchService } from './services/search.service';
 import { StudentComponent } from './components/student';
 
 import { AuthService } from './services/auth.service';
 import { AutoService } from './services/auto.service';
 import { EventService } from './services/event.service';
 import { HttpWrapperService } from './services/http-wrapper.service';
+import { SearchService } from './services/search.service';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { HttpWrapperService } from './services/http-wrapper.service';
     AuthComponent,
     AutoComponent,
     DetailComponent,
+    FeedComponent,
     HelpDialogComponent,
     MailDialogComponent,
     MainComponent,
@@ -52,7 +55,8 @@ import { HttpWrapperService } from './services/http-wrapper.service';
     HttpModule,
     InfiniteScrollModule,
     MasonryModule,
-    MaterialModule
+    MaterialModule,
+    NgGridModule
   ],
   providers: [
     AuthService,

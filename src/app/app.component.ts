@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   currTab: string = 'Introduction';
 
   tabs: {} = {
-    'Introduction' : {'state': false},
+    'Introduction' : {'state': true},
     'Event': {'state': false},
     'Share': {'state': false},
     'Student Search': {'state': false}
