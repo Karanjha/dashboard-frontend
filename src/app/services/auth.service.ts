@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { HttpWrapperService } from './http-wrapper.service';
+import { Student } from '../models/student.model';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -11,14 +12,20 @@ import 'rxjs/add/operator/toPromise';
 export class AuthService {
 
   public loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public user: Student;
 
   constructor(private http: HttpWrapperService) {
     if (localStorage.getItem('auth')) {
       this.loggedIn.next(true);
     }
+    if (localStorage.getItem('user')) {
+      this.user = JSON.parse(localStorage.getItem('user'));
+    }
     this.http.get('https://dashboard.pclub.in/api/user/me')
       .toPromise()
       .then((res) => {
+        this.user = res.json() as Student;
+        localStorage.setItem('user', JSON.stringify(this.user));
         this.loggedIn.next(true);
       })
       .catch((err) => {
@@ -34,6 +41,8 @@ export class AuthService {
                           {'username': username, 'password': password})
       .toPromise()
       .then((res) => {
+        this.user = res.json().user as Student;
+        localStorage.setItem('user', JSON.stringify(this.user));
         const auth = res.json().auth;
         localStorage.setItem('username', auth.username);
         localStorage.setItem('timestamp', auth.timestamp);

@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Input, Optional } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 
@@ -13,11 +13,17 @@ import { Student } from '../../models/student.model';
 export class DetailComponent {
 
   public student: Student;
+  @Input() public alternate: Student;
 
-  constructor(public dialogRef: MdDialogRef<DetailComponent>,
-              private sanitizer: DomSanitizer,
-              @Inject(MD_DIALOG_DATA) public data: any) {
-    this.student = this.data.student;
+  constructor(private sanitizer: DomSanitizer,
+              @Optional() @Inject(MD_DIALOG_DATA) public data: any) {}
+
+  ngOnInit() {
+    if (this.data === null) {
+      this.student = this.alternate;
+    } else {
+      this.student = this.data.student;
+    }
   }
 
   url = () => {
