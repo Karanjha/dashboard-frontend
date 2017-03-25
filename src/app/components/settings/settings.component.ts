@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
-  itemsLabel: string[] = ['Calendar', 'Student-Details', 'Twitter-Feed', 'Weather', 'Todo'];
+  // maintains checkbox state
+  itemsLabel: Object = {
+    'Calendar': false,
+    'Student-Details': false,
+    'Twitter-Feed': false,
+    'Weather': false,
+    'Todo': false
+  };
+  itemsLabelKeys = Array.from(Object.keys(this.itemsLabel));
+
   currItem: string = 'Calendar';
+
+  // maintains sidebar tab state
   items: {} = {
     'Calendar'        : {'state': true},
     'Student-Details' : {'state': false},
@@ -17,7 +29,15 @@ export class SettingsComponent implements OnInit {
     'Todo'            : {'state': false}
   };
 
-  constructor() { }
+  constructor() {
+    for (let key in this.itemsLabel) {
+      if (localStorage.getItem(key) === 'true') {
+        this.itemsLabel[key] = true;
+      } else {
+        this.itemsLabel[key] = false;
+      }
+    }
+  }
 
   state(widget) {
     console.log(widget);

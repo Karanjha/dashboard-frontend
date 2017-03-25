@@ -4,16 +4,25 @@
                 [mode]="side"
                 [disableClose]="true"
                 class="example-sidenav">
-      <button md-button *ngFor="let item of itemsLabel" [class.isActive]="currItem === item" (click)="change(item)">{{item}}</button>
+      <button md-button
+              *ngFor="let item of itemsLabelKeys"
+              [class.isActive]="currItem === item"
+              (click)="change(item)">
+        {{item}}
+      </button>
     </md-sidenav>
-  </md-sidenav-container>
+  </md-sidenav-div>
 
-  <div class="child-container">
+  <container class="child-container">
   <md-card>
     <md-card-title>Widgets</md-card-title>
     <md-card-content>
-      <div *ngFor="let item of itemsLabel">
-        <md-checkbox [id]="item" (change)="state($event)">{{item}}</md-checkbox>
+      <div *ngFor="let item of itemsLabelKeys">
+        <md-checkbox [id]="item"
+                     (change)="state($event)"
+                     [checked]="itemsLabel[item]">
+          {{item}}
+        </md-checkbox>
       </div>
     </md-card-content>
   </md-card>
@@ -45,7 +54,7 @@
       Content Here
     </md-card-content>
   </md-card>
-  
+
   <md-card *ngIf="items['Todo'].state">
     <md-card-title>Todo</md-card-title>
     <md-card-content>
