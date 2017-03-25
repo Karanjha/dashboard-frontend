@@ -5,7 +5,7 @@
     <a md-tab-link *ngFor="let tab of tabLabels" (click)="switchTab(tab)" [active]="currTab == tab">{{tab}}</a>
   </nav>
   <app-main *ngIf="tabs['Introduction'].state"></app-main>
-  <app-event *ngIf="tabs['Event'].state"></app-event>
+  <app-event [view]="'month'" *ngIf="tabs['Event'].state"></app-event>
   <app-auto *ngIf="tabs['Share'].state"></app-auto>
   <search-root *ngIf="tabs['Student Search'].state"></search-root>
 </div>

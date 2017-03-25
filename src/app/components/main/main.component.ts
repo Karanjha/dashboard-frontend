@@ -30,13 +30,22 @@ export class MainComponent implements OnInit {
       sizey: 2,
       col: 3,
       payload: 'selfData'
+    },
+    'calenData': {
+      row: 3,
+      sizex: 3,
+      sizey: 3,
+      col: 3,
+      payload: 'calenData'
     }
+
   };
 
   private localStoreToWidgetName = {
     'Twitter-Feed': 'twitter',
-    'Student-Details': 'selfData'
-  }
+    'Student-Details': 'selfData',
+    'Calendar' : 'calenData'
+  };
 
   configurations: any = {
     'twitter': {
@@ -47,6 +56,9 @@ export class MainComponent implements OnInit {
       display: false,
       config: this.defaults['selfData']
     },
+    'calenData': {
+      display: true,
+    }
   };
 
   ngOnInit() {

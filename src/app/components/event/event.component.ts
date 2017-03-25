@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import * as moment from 'moment';
 import * as $ from 'jquery';
 import { MdDialog } from '@angular/material';
@@ -16,6 +16,8 @@ import { HttpWrapperService } from '../../services/http-wrapper.service';
 
 export class EventComponent implements OnInit {
 
+  @Input() view: string;
+
   openDialog(date?: moment.Moment) {
     return this.dialog.open(EventDialogComponent, {
       data: {
@@ -24,9 +26,10 @@ export class EventComponent implements OnInit {
     });
   }
 
-  calendarOptions: Object = {
+  calendarOptions: any = {
     height: 'auto',
     fixedWeekCount : false,
+    defaultView: "month",
     timezone: 'local',
     eventLimit: true, // allow "more" link when too many events
     dayClick: (date, jsEvent, view) => {
@@ -51,8 +54,15 @@ export class EventComponent implements OnInit {
   };
 
   constructor(private dialog: MdDialog,
-              private http: HttpWrapperService) { }
+              private http: HttpWrapperService) {
 
-  ngOnInit() {}
+  }
+
+    ngOnInit() {
+      if (this.view !== null) {
+        this.calendarOptions.defaultView = this.view;
+        console.log(this.view);
+      }
+    }
 
 }

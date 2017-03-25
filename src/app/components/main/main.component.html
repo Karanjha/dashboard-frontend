@@ -9,13 +9,23 @@
   </div>
 
   <div [(ngGridItem)]="configurations.selfData.config"
-       *ngIf="configurations.selfData.display">
+       *ngIf="configurations.selfData.display"
+       (onChange)="updateItem($event)">
     <md-card>
       <md-card-content>
         <search-detail
-          [alternate]="authService.user">
+            [alternate]="authService.user">
         </search-detail>
       </md-card-content>
     </md-card>
+  </div>
+  <div [(ngGridItem)]="configurations.calenData.config"
+       *ngIf="configurations.calenData.display"
+       (onChange)="updateItem($event)">
+      <md-card>
+        <md-card-content>
+          <app-event [view]="'basicDay'"></app-event>
+        </md-card-content>
+      </md-card>
   </div>
 </div>
