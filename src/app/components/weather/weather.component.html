@@ -1,0 +1,11 @@
+<div *ngIf="weather">
+  <div>
+    <img [src]="url()"/>
+  </div>
+  <div class="temp">
+    {{ weather.main.temp + "°" + " " + "C" }}
+  </div>
+  <div>
+    {{ weather.weather[0].main }}
+  </div>
+</div>

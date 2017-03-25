@@ -25,13 +25,14 @@ import { SearchComponent } from './components/search';
 import { StudentComponent } from './components/student';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SettingsButtonComponent } from './components/settings/settings-button/settings-button.component';
+import { WeatherComponent } from './components/weather';
 
 import { AuthService } from './services/auth.service';
 import { AutoService } from './services/auto.service';
 import { EventService } from './services/event.service';
 import { HttpWrapperService } from './services/http-wrapper.service';
 import { SearchService } from './services/search.service';
-
+import { WeatherService } from './services/weather.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { SearchService } from './services/search.service';
     SearchComponent,
     StudentComponent,
     SettingsComponent,
-    SettingsButtonComponent
+    SettingsButtonComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,8 @@ import { SearchService } from './services/search.service';
     AutoService,
     EventService,
     HttpWrapperService,
-    SearchService
+    SearchService,
+    WeatherService
   ],
   bootstrap: [ AppComponent ],
   entryComponents: [
