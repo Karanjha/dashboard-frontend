@@ -14,7 +14,6 @@ export class SettingsComponent implements OnInit {
     'Student-Details': false,
     'Twitter-Feed': false,
     'Weather': false,
-    'Todo': false
   };
   itemsLabelKeys = Array.from(Object.keys(this.itemsLabel));
 
@@ -26,7 +25,6 @@ export class SettingsComponent implements OnInit {
     'Student-Details' : {'state': false},
     'Twitter-Feed'    : {'state': false},
     'Weather'         : {'state': false},
-    'Todo'            : {'state': false}
   };
 
   constructor() {

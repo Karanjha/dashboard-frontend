@@ -11,9 +11,9 @@
         {{item}}
       </button>
     </md-sidenav>
-  </md-sidenav-div>
+  </md-sidenav-container>
 
-  <container class="child-container">
+  <div class="child-container">
   <md-card>
     <md-card-title>Widgets</md-card-title>
     <md-card-content>
@@ -55,11 +55,5 @@
     </md-card-content>
   </md-card>
 
-  <md-card *ngIf="items['Todo'].state">
-    <md-card-title>Todo</md-card-title>
-    <md-card-content>
-      Content Here
-    </md-card-content>
-  </md-card>
   </div>
 </div>

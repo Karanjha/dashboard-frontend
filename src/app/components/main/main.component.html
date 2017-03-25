@@ -19,6 +19,7 @@
       </md-card-content>
     </md-card>
   </div>
+
   <div [(ngGridItem)]="configurations.calenData.config"
        *ngIf="configurations.calenData.display"
        (onChange)="updateItem($event)">
