@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="twittercontainer fl">
-    <md-card *ngIf="configurations.twitter.display">
+  <div class="twittercontainer fl" *ngIf="configurations.twitter.display">
+    <md-card>
       <md-card-content class="twitter">
         <div class="twitterinner">
           <app-feed></app-feed>
@@ -9,8 +9,8 @@
     </md-card>
   </div>
 
-  <div class="selfcontainer fl">
-    <md-card *ngIf="configurations.selfData.display">
+  <div class="selfcontainer fl" *ngIf="configurations.selfData.display">
+    <md-card>
       <md-card-content class="self">
         <search-detail
           [alternate]="authService.user">
@@ -19,16 +19,16 @@
     </md-card>
   </div>
 
-  <div class="calendarcontainer fl">
-    <md-card *ngIf="configurations.calenData.display">
+  <div class="calendarcontainer fl" *ngIf="configurations.calenData.display">
+    <md-card>
       <md-card-content class="calendar">
         <app-event [view]="'basicDay'"></app-event>
       </md-card-content>
     </md-card>
   </div>
 
-  <div class="weathercontainer fl">
-    <md-card *ngIf="configurations.weather.display">
+  <div class="weathercontainer fl" *ngIf="configurations.weather.display">
+    <md-card>
       <md-card-content class="weather">
         <app-weather></app-weather>
       </md-card-content>
