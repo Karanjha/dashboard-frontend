@@ -29,6 +29,9 @@ export class AppComponent implements OnInit {
     this.authService.loggedIn.subscribe((val) => {
       this.check(val);
     });
+    if (!localStorage.getItem('login.first')) {
+      this.settings = true;
+    }
   }
 
   check(state) {
@@ -46,7 +49,9 @@ export class AppComponent implements OnInit {
 
   showSettings(state) {
     this.settings = state;
-    console.log(this.settings);
+    if (!state) {
+      localStorage.setItem('login.first', 'done');
+    }
   }
 
 }
