@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-settings-button',
@@ -8,21 +8,15 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class SettingsButtonComponent implements OnInit {
 
   @Output() settings: EventEmitter<boolean> = new EventEmitter<boolean>();
-  state: boolean = false;
+  @Input() state: boolean;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-    show() {
-      if (!this.state) {
-        this.settings.emit(true);
-        this.state = true;
-      } else {
-        this.settings.emit(false);
-        this.state = false;
-      }
+  show() {
+      this.settings.emit(!this.state);
   }
 
 

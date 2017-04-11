@@ -1,3 +1,4 @@
 <button md-fab (click)="show()">
-  <md-icon>settings</md-icon>
+  <md-icon *ngIf="!state">settings</md-icon>
+  <md-icon *ngIf="state">done</md-icon>
 </button>

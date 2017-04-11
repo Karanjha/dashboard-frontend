@@ -9,8 +9,11 @@
   <app-auto *ngIf="tabs['Share'].state"></app-auto>
   <search-root *ngIf="tabs['Student Search'].state"></search-root>
 </div>
-<app-settings *ngIf="settings"></app-settings>
-<app-settings-button
-  (settings)="showSettings($event)"
-  *ngIf="loggedIn && tabs['Dashboard'].state">
-</app-settings-button>
+<div *ngIf="loggedIn">
+  <app-settings *ngIf="settings"></app-settings>
+  <app-settings-button
+      (settings)="showSettings($event)"
+      [state]="settings"
+      *ngIf="loggedIn && tabs['Dashboard'].state">
+  </app-settings-button>
+</div>
